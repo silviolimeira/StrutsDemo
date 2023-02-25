@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Registration Form</title>
-</head>
+<s:head/>
 <body>
 	<h2>Registration Form</h2>
 	<s:form action="registerAction">

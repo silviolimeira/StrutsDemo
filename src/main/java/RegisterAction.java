@@ -1,17 +1,17 @@
-import com.opensymphony.xwork2.Action;
+import com.opensymphony.xwork2.ActionSupport;
 
-public class RegisterAction implements Action {
+public class RegisterAction extends ActionSupport {
 
-	String message;
+	private static final long serialVersionUID = 1L;
+
 	String firstName;
 	String lastName;
 	String gender;
-	String age;
+	Integer age;
 	String email;
 
 	public String execute() {
 		System.out.println("execute() method called");
-		message = "SUCCESS Message :- ) - " + firstName;
 		System.out.println("123 :) Name: " + firstName);
 		return SUCCESS;
 	}
@@ -32,11 +32,11 @@ public class RegisterAction implements Action {
 		this.gender = gender;
 	}
 
-	public String getAge() {
+	public Integer getAge() {
 		return age;
 	}
 
-	public void setAge(String age) {
+	public void setAge(Integer age) {
 		this.age = age;
 	}
 
@@ -48,14 +48,6 @@ public class RegisterAction implements Action {
 		this.email = email;
 	}
 
-	public String getMessage() {
-		return message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
-	}
-
 	public String getFirstName() {
 		return firstName;
 	}
@@ -63,5 +55,19 @@ public class RegisterAction implements Action {
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+
+	/*
+	 * @Override public void validate() { if (firstName.trim().equals("")) {
+	 * addFieldError("firstName", "First name is required."); } if
+	 * (lastName.trim().equals("")) { addFieldError("lastName",
+	 * "Last name is required."); } if (gender == null) { addFieldError("gender",
+	 * "Gender is requiered."); } if (age == null) { addFieldError("age",
+	 * "Age is requiered."); } else if (age <= 18) { addFieldError("age",
+	 * "Age should be above 18."); } if (email.trim().equals("")) {
+	 * addFieldError("email", "Email name is required."); }
+	 * 
+	 * 
+	 * }
+	 */
 
 }
