@@ -9,11 +9,20 @@ public class RegisterAction extends ActionSupport {
 	String gender;
 	Integer age;
 	String email;
+	String address;
 
 	public String execute() {
 		System.out.println("execute() method called");
 		System.out.println("123 :) Name: " + firstName);
 		return SUCCESS;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	public String getLastName() {
