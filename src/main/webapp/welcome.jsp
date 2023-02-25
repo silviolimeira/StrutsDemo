@@ -33,5 +33,9 @@
 	<s:property value="address" />
 	<br />
 	
+	<s:label value="Favourite Color: " />
+	<s:property value="selectedColor" />
+	<br />
+	
 </body>
 </html>

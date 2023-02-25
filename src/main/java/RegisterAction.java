@@ -10,11 +10,20 @@ public class RegisterAction extends ActionSupport {
 	Integer age;
 	String email;
 	String address;
+	String selectedColor;
 
 	public String execute() {
 		System.out.println("execute() method called");
 		System.out.println("123 :) Name: " + firstName);
 		return SUCCESS;
+	}
+
+	public String getSelectedColor() {
+		return selectedColor;
+	}
+
+	public void setSelectedColor(String selectedColor) {
+		this.selectedColor = selectedColor;
 	}
 
 	public String getAddress() {

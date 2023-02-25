@@ -30,6 +30,5 @@
 			<message>Must provide a valid email **</message>
 		</field-validator>
 	</field>
-
 </validators>   
 
