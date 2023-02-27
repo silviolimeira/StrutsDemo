@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,28 +17,79 @@ public class RegisterAction extends ActionSupport {
 	String address;
 	String selectedColor;
 	List<String> colors;
+	boolean subscription;
+	List<String> hobbies;
+	String selectedHobbies;
+	List<Product> products;
 
 	public String execute() {
 		System.out.println("execute() method called");
 		System.out.println("123 :) Name: " + firstName);
+
+		if (subscription == true) {
+			System.out.println("You are a subscriber");
+		} else {
+			System.out.println("You are not a subscriber");
+		}
+
 		return SUCCESS;
 	}
 
 	public String initializeFormFields() {
 		initializeColors();
+		initializeHobbies();
+		initializeProducts();
 		return "input";
 	}
-	
+
+	public void initializeProducts() {
+		products = new ArrayList<>();
+		products.add(new Product(111, "Mobili Phone", new BigDecimal("7000.00")));
+		products.add(new Product(222, "Camera", new BigDecimal("700.00")));
+		products.add(new Product(333, "TV", new BigDecimal("5000.00")));
+		products.add(new Product(333, "Notebook Gamer", new BigDecimal("20000.00")));
+	}
+
+	public void initializeHobbies() {
+		hobbies = Arrays.asList("Drawing", "Teaching", "Singing", "Programming");
+	}
+
 	public void initializeColors() {
 		setColors(Arrays.asList("Red", "Blue", "Green", "White"));
-//		colors = new ArrayList<String>();
-//		colors.add("Red");
-//		colors.add("Blue");
-//		colors.add("Green");
-//		colors.add("White");
-//		setColors(colors);
 	}
-	
+
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
+
+	public String getSelectedHobbies() {
+		return selectedHobbies;
+	}
+
+	public void setSelectedHobbies(String selectedHobbies) {
+		this.selectedHobbies = selectedHobbies;
+	}
+
+	public List<String> getHobbies() {
+		return hobbies;
+	}
+
+	public void setHobbies(List<String> hobbies) {
+		this.hobbies = hobbies;
+	}
+
+	public boolean isSubscription() {
+		return subscription;
+	}
+
+	public void setSubscription(boolean subscription) {
+		this.subscription = subscription;
+	}
+
 	public List<String> getColors() {
 		return colors;
 	}
