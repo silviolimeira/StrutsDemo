@@ -5,6 +5,8 @@ import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import pojo.Product;
+
 public class RegisterAction extends ActionSupport {
 
 	private static final long serialVersionUID = 1L;
@@ -44,10 +46,8 @@ public class RegisterAction extends ActionSupport {
 
 	public void initializeProducts() {
 		products = new ArrayList<>();
-		products.add(new Product(111, "Mobili Phone", new BigDecimal("7000.00")));
-		products.add(new Product(222, "Camera", new BigDecimal("700.00")));
-		products.add(new Product(333, "TV", new BigDecimal("5000.00")));
-		products.add(new Product(333, "Notebook Gamer", new BigDecimal("20000.00")));
+		products.add(new Product("111", "iPhone", "Mobile Phone", new BigDecimal("7000.00")));
+		products.add(new Product("222", "Sony", "Camera", new BigDecimal("700.00")));
 	}
 
 	public void initializeHobbies() {

@@ -9,22 +9,29 @@
       http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd">
 	<changeSet author="cesar" id="2">
 
-        <insert tableName="product">
-            <column name="productName" value="Nome 1"/>
-            <column name="productPrice" value="1000.14"/>
-        </insert>
-        <insert tableName="product">
-            <column name="productName" value="Nome 2"/>
-            <column name="productPrice" value="2000.34"/>
-        </insert>
-        <insert tableName="product">
-            <column name="productName" value="Nome 3"/>
-            <column name="productPrice" value="3000.45"/>
-        </insert>
-        
+
         <insert tableName="login_info">
             <column name="user_name" value="admin"/>
             <column name="password" value="123456"/>
+        </insert>
+
+
+        <insert tableName="product">
+            <column name="name" value="iPhone"/>
+            <column name="category" value="Mobile phones"/>
+            <column name="price" value="10000.51"/>
+        </insert>
+
+        <insert tableName="product">
+            <column name="name" value="Sony Bravia"/>
+            <column name="category" value="Television"/>
+            <column name="price" value="7000.51"/>
+        </insert>
+
+        <insert tableName="product">
+            <column name="name" value="Nike Shoes"/>
+            <column name="category" value="Television"/>
+            <column name="price" value="4000.31"/>
         </insert>
         
 	</changeSet>

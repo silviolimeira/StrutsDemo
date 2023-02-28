@@ -19,6 +19,8 @@
 		<!--<sqlFile dbms="h2" path="file_for_h2.sql"/> <sqlFile dbms="mariadb,mysql" 
 			path="file_for_mysql.sql"/> -->
 
+
+
 		<createTable tableName="product">
 			<column name="productId" type="LONG">
 				<constraints nullable="false" primaryKey="true"
