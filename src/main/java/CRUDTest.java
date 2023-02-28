@@ -13,11 +13,10 @@ public class CRUDTest {
 					"jdbc:mariadb://localhost:3306/mydb?createDatabaseIfNotExist=true&useSsl=false&useUnicode=true&characterEncoding=UTF-8",
 					"root", "123456");
 
-			// Update using PreparedStatement
-			PreparedStatement ps = connection.prepareStatement("UPDATE employee SET emp_salary = ? WHERE emp_id = ?");
-			
-			ps.setInt(1, 20000);
-			ps.setInt(2, 102);
+			// Delete using PreparedStatement
+			PreparedStatement ps = connection.prepareStatement("DELETE FROM employee WHERE emp_id = ?");
+
+			ps.setInt(1, 103);
 			int n = ps.executeUpdate();
 			
 			System.out.println("Number of rows affected: " + n);
