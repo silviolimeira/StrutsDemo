@@ -14,9 +14,10 @@ public class CRUDTest {
 					"root", "123456");
 
 			// Delete using PreparedStatement
-			PreparedStatement ps = connection.prepareStatement("DELETE FROM employee WHERE emp_id = ?");
+			//PreparedStatement ps = connection.prepareStatement("DELETE FROM employee WHERE emp_id = ?");
+			PreparedStatement ps = connection.prepareStatement("DELETE FROM employee WHERE emp_salary >= ?");
 
-			ps.setInt(1, 103);
+			ps.setInt(1, 1000);
 			int n = ps.executeUpdate();
 			
 			System.out.println("Number of rows affected: " + n);
