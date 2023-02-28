@@ -1,0 +1,56 @@
+
+Ref:
+https://docs.liquibase.com/parameters/working-with-command-parameters.html
+
+Example script Oracle:
+$ /d/projeto-novo/liquibase-4.19.0/liquibase --search-path=path/to/changelog/files update --changelog-file=com/example/db.changelog.xml --url="jdbc:oracle:thin:@localhost:1521:oracle" --username=scott --password=tiger
+
+/d/projeto-novo/liquibase-4.19.0/liquibase
+
+Run Liquibase using defaults from the Properties file
+
+$ liquibase update
+
+Example Properties: liquibase.properties
+
+searchPath: path/to/changelog/files
+url: jdbc:oracle:thin:@localhost:1521:oracle
+username: scott
+password: tiger
+
+MySQL:
+--url="jdbc:mysql://localhost/dbname?useUnicode=true&characterEncoding=UTF-8"
+
+
+spring.datasource.url=jdbc:mariadb://localhost:3306/mydb?createDatabaseIfNotExist=true&useSsl=false&useUnicode=true&characterEncoding=UTF-8
+#jdbc:mariadb://localhost:3306/mydb?useSsl=false;createDatabaseIfNotExist=true;
+spring.datasource.username=root
+spring.datasource.password=123456
+spring.datasource.dbcp2.driver-class-name=org.mariadb.jdbc.Driver
+
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MariaDBDialect
+
+
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.username=sa
+spring.datasource.password=
+spring.datasource.sql-script-encoding=UTF-8
+
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console
+
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+
+Ref: Documentation get started: 
+https://www.liquibase.org/get-started/quickstart?_ga=2.218853968.83311019.1677542493-1501423238.1677542493
+
+Docker mariadb:
+docker run -d -p 3306:3306 --name mydb --env MARIADB_USER=root --env MARIADB_PASSWORD=123456 --env MARIADB_ROOT_PASSWORD=123456 mariadb:latest
+
+
+Executando no cmd
+C:\Users\limeira\Downloads\liquibase-4.19.0\liquibase.bat --search-path=. update --changelog-file=db.changelog.xml --url="jdbc:mariadb://localhost:3306/mydb?createDatabaseIfNotExist=true&useSsl=false&useUnicode=true&characterEncoding=UTF-8" --username=root --password=123456
+
+Executando no bash:
+/d/projeto-novo/liquibase-4.19.0/liquibase --search-path=. update --changelog-file=db.changelog.xml --url="jdbc:mariadb://localhost:3306/mydb?createDatabaseIfNotExist=true&useSsl=false&useUnicode=true&characterEncoding=UTF-8" --username=root --password=123456
