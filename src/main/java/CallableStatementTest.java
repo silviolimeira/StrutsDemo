@@ -14,13 +14,13 @@ public class CallableStatementTest {
 					"root", "123456");
 
 			// Callable Statement
-			CallableStatement cs = connection.prepareCall("{call insertEmployee(?, ?, ?)}");
+			CallableStatement cs = connection.prepareCall("{call getEmployeeById(?, ?, ?)}");
 			cs.setInt(1, 101);
-			cs.setString(2, "EmployeeA");
-			cs.setInt(3, 9000);
+			cs.registerOutParameter(2, java.sql.Types.VARCHAR);
+			cs.registerOutParameter(3, java.sql.Types.INTEGER);
 			int n = cs.executeUpdate();
 
-			System.out.println("Number of rows affected: " + n);
+			System.out.println("Name: " + cs.getString(2) + " - Salary: " + cs.getInt(3));
 
 			connection.close();
 
@@ -34,9 +34,12 @@ public class CallableStatementTest {
 
 // Callable Statement insertEmployee
 //DROP PROCEDURE IF EXISTS insertEmployee;
-/*
- * EXAMPLE insertEmployee STORED PROCEDURE MARIADB CREATE OR REPLACE PROCEDURE
- * insertEmployee (eid INT, ename VARCHAR(30), esal INT) BEGIN INSERT INTO
- * mydb.employee VALUES(eid, ename, esal); END;
- * 
- */
+
+// Callable Statement getEmployeeById
+//CREATE OR REPLACE PROCEDURE getEmployeeById (
+//eid INT,
+//OUT ename VARCHAR(30),
+//OUT esal INT)
+//BEGIN
+//  SELECT emp_name, emp_salary INTO ename, esal FROM employee;  
+//END;
