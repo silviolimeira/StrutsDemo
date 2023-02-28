@@ -35,6 +35,8 @@ public class CallableStatementTest {
 // Callable Statement insertEmployee
 //DROP PROCEDURE IF EXISTS insertEmployee;
 
+// Ref: https://www.alphacodingskills.com/mariadb/mariadb-stored-procedures.php
+
 // Callable Statement getEmployeeById
 //CREATE OR REPLACE PROCEDURE getEmployeeById (
 //eid INT,
