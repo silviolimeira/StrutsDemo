@@ -15,7 +15,12 @@ public class CRUDTest {
 					"root", "123456");
 
 			Statement statement = connection.createStatement();
-			int n = statement.executeUpdate("CREATE TABLE employee(emp_id int, emp_name varchar(30), emp_salary int)");
+			// CREATE A TABLE EMPOYEE
+			//int n = statement.executeUpdate("CREATE TABLE employee(emp_id int, emp_name varchar(30), emp_salary int)");
+			
+			// INSERT A NEW ROW INSERT COMMAND
+			//int n = statement.executeUpdate("INSERT INTO employee VALUES(103, 'Employee C', 7000)");
+			int n = statement.executeUpdate("INSERT INTO employee(emp_id, emp_name) VALUES(104, 'Employee D')");
 			
 			System.out.println("Number of rows affected: " + n);
 			
