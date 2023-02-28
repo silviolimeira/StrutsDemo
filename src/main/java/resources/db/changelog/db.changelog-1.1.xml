@@ -22,5 +22,10 @@
             <column name="productPrice" value="3000.45"/>
         </insert>
         
+        <insert tableName="login_info">
+            <column name="user_name" value="admin"/>
+            <column name="password" value="123456"/>
+        </insert>
+        
 	</changeSet>
 </databaseChangeLog>

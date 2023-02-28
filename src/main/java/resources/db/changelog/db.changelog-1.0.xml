@@ -19,6 +19,15 @@
 		<!--<sqlFile dbms="h2" path="file_for_h2.sql"/> <sqlFile dbms="mariadb,mysql" 
 			path="file_for_mysql.sql"/> -->
 
+		<createTable tableName="login_info">
+			<column autoIncrement="true" name="id" type="BIGINT">
+				<constraints nullable="false" primaryKey="true"
+					primaryKeyName="login_info_pkey" />
+			</column>
+			<column name="user_name" type="VARCHAR(8)" />
+			<column name="password" type="VARCHAR(8)" />
+		</createTable>
+
 		<createTable tableName="product">
 			<column autoIncrement="true" name="productId" type="INTEGER">
 				<constraints nullable="false" primaryKey="true"
@@ -27,5 +36,7 @@
 			<column name="productName" type="VARCHAR(255)" />
 			<column name="productPrice" type="DECIMAL(14,2)" />
 		</createTable>
+		
+		
 	</changeSet>
 </databaseChangeLog>

@@ -5,12 +5,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Welcome</title>
+<title>Login Form</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 	<div align="center">
-		<h2>Welcome</h2>
+		<h2>Login</h2>
+		<s:form action="loginAction" class="loginForm">
+			<s:textfield name="userName" label="User Name" class="formTextField" />
+			<s:password name="password" label="Password" class="formTextField" />
+			<s:submit value="Login" class="actionBtn" />
+		</s:form>
 	</div>
 
 </body>

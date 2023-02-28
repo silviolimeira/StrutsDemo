@@ -27,5 +27,15 @@
 			<column name="productName" type="VARCHAR(255)" />
 			<column name="productPrice" type="DECIMAL(14,2)" />
 		</createTable>
+
+
+		<createTable tableName="product">
+			<column name="productId" type="LONG">
+				<constraints nullable="false" primaryKey="true"
+					unique="true" />
+			</column>
+			<column name="productName" type="VARCHAR(255)" />
+			<column name="productPrice" type="DECIMAL(14,2)" />
+		</createTable>
 	</changeSet>
 </databaseChangeLog>
