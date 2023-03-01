@@ -10,7 +10,7 @@
 <body>
 	<h2>Registration Form</h2>
 	<s:form action="registerAction">
-		<s:textfield name="firstName" label="First Name" />
+		<s:textfield key="global.firstName" name="firstName"/>
 		<s:textfield name="lastName" label="Last Name" />
 		<s:radio name="gender" list="{'Male', 'Female'}" label="Gender" />
 		<s:textfield name="age" label="Age" />

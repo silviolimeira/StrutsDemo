@@ -45,12 +45,12 @@ public class ProductManagementDAO {
 
 	}
 
-	public static Product getProductById(String productId) {
+	public static Product getProductById(String id) {
 		Product product = null;
 		try {
 			Connection conn = DBUtil.getConnection();
-			PreparedStatement ps = conn.prepareStatement("SELECT * FROM product WHERE prod_id = ?");
-			ps.setString(1, productId);
+			PreparedStatement ps = conn.prepareStatement("SELECT * FROM product WHERE id = ?");
+			ps.setString(1, id);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				product = new Product(rs.getString("id"), rs.getString("name"), rs.getString("category"),
@@ -84,7 +84,7 @@ public class ProductManagementDAO {
 		try {
 			Connection conn = DBUtil.getConnection();
 			PreparedStatement ps = conn
-					.prepareStatement("UPDATE product SET prod_name=?, prod_category=?, prod_price=? WHERE prod_id=?");
+					.prepareStatement("UPDATE product SET name=?, category=?, price=? WHERE id=?");
 			ps.setString(1, product.getName());
 			ps.setString(2, product.getCategory());
 			ps.setBigDecimal(3, product.getPrice());
@@ -100,7 +100,7 @@ public class ProductManagementDAO {
 		int status = 0;
 		try {
 			Connection conn = DBUtil.getConnection();
-			PreparedStatement ps = conn.prepareStatement("DELETE FROM product where prod_id = ?");
+			PreparedStatement ps = conn.prepareStatement("DELETE FROM product where id = ?");
 			ps.setString(1, productId);
 			status = ps.executeUpdate();
 		} catch (Exception e) {

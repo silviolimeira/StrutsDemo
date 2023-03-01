@@ -12,6 +12,9 @@
 
 	<div align="center">
 		<h2>Welcome</h2>
+		<a href="addProduct.jsp">
+			<button class="actionBtn">Add New Product</button>
+		</a>
 	</div>
 
 	<table width="750" class="productTable" align="center">
@@ -31,11 +34,11 @@
 				<td><s:property value="#product.category" /></td>
 				<td><s:property value="#product.price" /></td>
 				<td><a
-					href="updateDataAction?productId=<s:property value="#product.productId"/>">
+					href="updateDataAction?id=<s:property value="#product.id"/>">
 						<button class="actionBtn">Update</button>
 				</a></td>
 				<td><a
-					href="deleteAction?productId=<s:property value="#product.productId"/>">
+					href="deleteAction?id=<s:property value="#product.id"/>">
 						<button class="actionBtn">Delete</button>
 				</a></td>
 
