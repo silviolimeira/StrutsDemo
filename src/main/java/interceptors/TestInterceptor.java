@@ -9,19 +9,19 @@ public class TestInterceptor implements Interceptor {
 
 	@Override
 	public void destroy() {
-		System.out.println("destroy() called");
+		System.out.println("TestInterceptor destroy() called");
 	}
 
 	@Override
 	public void init() {
-		System.out.println("init() called");
+		System.out.println("TestInterceptor init() called");
 	}
 
 	@Override
 	public String intercept(ActionInvocation ai) throws Exception {
-		System.out.println("Pre-processing");
+		System.out.println("TestInterceptor Pre-processing");
 		String result = ai.invoke();
-		System.out.println("Post-processing");
+		System.out.println("TestInterceptor Post-processing");
 		return result;
 	}
 

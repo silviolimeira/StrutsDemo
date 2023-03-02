@@ -1,3 +1,5 @@
+package action;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,7 +26,11 @@ public class RegisterAction extends ActionSupport {
 	String selectedHobbies;
 	List<Product> products;
 
+	boolean valid = false;
+
 	public String execute() {
+		initializeFormFields();
+
 		System.out.println("execute() method called");
 		System.out.println("123 :) Name: " + firstName);
 
@@ -34,14 +40,23 @@ public class RegisterAction extends ActionSupport {
 			System.out.println("You are not a subscriber");
 		}
 
-		return SUCCESS;
+		if (valid) {
+			return SUCCESS;
+		} else {
+			return INPUT;
+		}
+
 	}
 
-	public String initializeFormFields() {
+	@Override
+	public void validate() {
+		if (age != null && age > 0) valid = true;
+	}
+
+	public void initializeFormFields() {
 		initializeColors();
 		initializeHobbies();
 		initializeProducts();
-		return "input";
 	}
 
 	public void initializeProducts() {
@@ -154,18 +169,5 @@ public class RegisterAction extends ActionSupport {
 		this.firstName = firstName;
 	}
 
-	/*
-	 * @Override public void validate() { if (firstName.trim().equals("")) {
-	 * addFieldError("firstName", "First name is required."); } if
-	 * (lastName.trim().equals("")) { addFieldError("lastName",
-	 * "Last name is required."); } if (gender == null) { addFieldError("gender",
-	 * "Gender is requiered."); } if (age == null) { addFieldError("age",
-	 * "Age is requiered."); } else if (age <= 18) { addFieldError("age",
-	 * "Age should be above 18."); } if (email.trim().equals("")) {
-	 * addFieldError("email", "Email name is required."); }
-	 * 
-	 * 
-	 * }
-	 */
 
 }

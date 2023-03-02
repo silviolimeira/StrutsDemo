@@ -4,56 +4,51 @@ import java.math.BigDecimal;
 
 public class Product {
 
-	String Id;
-	String Name;
-	String Category;
-	BigDecimal Price;
+	String id;
+	String mame;
+	String category;
+	BigDecimal price;
 
 	public Product() {
 	}
 
-	public Product(String id, String name, String category, BigDecimal price) {
-		Id = id;
-		Name = name;
-		Category = category;
-		Price = price;
+	public Product(String id, String mame, String category, BigDecimal price) {
+		this.id = id;
+		this.mame = mame;
+		this.category = category;
+		this.price = price;
 	}
 
 	public String getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(String id) {
-		Id = id;
+		this.id = id;
 	}
 
-	public String getName() {
-		return Name;
+	public String getMame() {
+		return mame;
 	}
 
-	public void setName(String name) {
-		Name = name;
+	public void setMame(String mame) {
+		this.mame = mame;
 	}
 
 	public String getCategory() {
-		return Category;
+		return category;
 	}
 
 	public void setCategory(String category) {
-		Category = category;
+		this.category = category;
 	}
 
 	public BigDecimal getPrice() {
-		return Price;
+		return price;
 	}
 
 	public void setPrice(BigDecimal price) {
-		Price = price;
-	}
-
-	@Override
-	public String toString() {
-		return "Product [Id=" + Id + ", Name=" + Name + ", Category=" + Category + ", Price=" + Price + "]";
+		this.price = price;
 	}
 
 }

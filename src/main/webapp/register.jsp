@@ -28,13 +28,15 @@
 		<tr>
 			<th>Product ID</th>
 			<th>Product Name</th>
+			<th>Category</th>
 			<th>Product Price</th>
 		</tr>
 		<s:iterator value="products" var="product">
 			<tr>
-				<td><s:property value="#product.productId" /></td>
-				<td><s:property value="#product.productName" /></td>
-				<td><s:property value="#product.productPrice" /></td>
+				<td><s:property value="#product.id" /></td>
+				<td><s:property value="#product.name" /></td>
+				<td><s:property value="#product.category" /></td>
+				<td><s:property value="#product.price" /></td>
 			</tr>
 		</s:iterator>
 	</table>
