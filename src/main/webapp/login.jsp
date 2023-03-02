@@ -14,7 +14,7 @@
 		<h2>Login</h2>
 		<s:form action="loginAction" class="loginForm">
 			<s:textfield key="global.userName" name="userName" class="formTextField" />
-			<s:password name="password" label="Password" class="formTextField" />
+			<s:password key="global.userPassword" name="password" class="formTextField" />
 			<s:submit value="Login" class="actionBtn" />
 		</s:form>
 		<s:url action="changeLocaleAction" var="urlEn">

@@ -8,11 +8,21 @@
 	<constant name="struts.custom.i18n.resources" value="global" />
 	<package name="productManagementApp" extends="struts-default">
 
+		<interceptors>
+			<interceptor name="testInterceptor" class="interceptors.TestInterceptor" />
+			<interceptor-stack name="myStack">
+				<interceptor-ref name="defaultStack"/>
+				<interceptor-ref name="testInterceptor"/>
+			</interceptor-stack>
+		</interceptors>
+
+
 		<action name="changeLocaleAction" class="action.ChangeLocaleAction">
 			<result name="input">/login.jsp</result>
 		</action>
 
 		<action name="loginAction" class="action.LoginAction">
+			<interceptor-ref name="myStack"></interceptor-ref>
 			<result name="success" type="redirect">welcomeAction</result>
 			<result name="input">/login.jsp</result>
 		</action>
@@ -20,6 +30,7 @@
 		<action name="welcomeAction" class="action.WelcomeAction">
 			<result name="success">/welcome.jsp</result>
 			<result name="error">/error.jsp</result>
+			<result name="input">/welcome.jsp</result>
 		</action>
 
 		<action name="addAction" class="action.AddAction">
