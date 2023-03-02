@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 	<div align="center">
 		<h2>Login</h2>
 		<s:form action="loginAction" class="loginForm">

@@ -8,6 +8,8 @@
 <title>Registration Info Form</title>
 <s:head />
 <body>
+	<%@ include file="header.jsp" %>
+
 	<h2>Registration Info Form</h2>
 
 	<s:property value="age"/>

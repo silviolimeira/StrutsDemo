@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+	<%@ include file="header.jsp" %>
 
 	<div align="center">
 		<h2>Add New Product</h2>

@@ -8,6 +8,8 @@
 <title>Registration Form</title>
 <s:head />
 <body>
+	<%@ include file="header.jsp" %>
+
 	<h2>Registration Form</h2>
 	<s:form action="registerAction" class="RegisterAction">
 		<s:textfield key="global.firstName" name="firstName" />

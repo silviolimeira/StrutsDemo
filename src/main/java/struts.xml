@@ -23,7 +23,8 @@
 		</action>
 
 		<action name="loginAction" class="action.LoginAction">
-			<result name="success" type="redirect">registerAction</result>
+			<!--<result name="success" type="redirect">registerAction</result>-->
+			<result name="success" type="redirect">welcomeAction</result>
 			<result name="input">/login.jsp</result>
 		</action>
 

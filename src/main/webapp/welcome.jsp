@@ -10,19 +10,13 @@
 </head>
 <body>
 
+	<%@ include file="header.jsp" %>
+
 	<div align="center">
 		<h2>Welcome</h2>
 		<a href="addProduct.jsp">
 			<button class="actionBtn">Add New Product</button>
 		</a>
-		<s:url action="changeLocaleAction" var="urlEn">
-			<s:param name="request_locale">en</s:param>
-		</s:url>
-		<a href="${urlEn}">English</a>
-		<s:url action="changeLocaleAction" var="url_pt_BR">
-			<s:param name="request_locale">br</s:param>
-		</s:url>
-		<a href="${url_pt_BR}">Português Brasil</a>		
 	</div>
 
 	<table width="750" class="productTable" align="center">
