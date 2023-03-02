@@ -3,8 +3,8 @@
 <validators>
 	<validator type="requiredstring">
 		<param name="fieldName">firstName</param>
-		<message>First name is required **</message>
-	</validator>
+		<message key="error.firstName.required" />
+	</validator>	
 	<validator type="requiredstring">
 		<param name="fieldName">lastName</param>
 		<message>Last name is required **</message>
@@ -28,6 +28,10 @@
 		</field-validator>
 		<field-validator type="email">
 			<message>Must provide a valid email **</message>
+		</field-validator>
+		<field-validator type="domainNameValidator">
+			<param name="domainName">gmail.com</param>
+			<message key="error.email.validdomain" />
 		</field-validator>
 	</field>
 </validators>   

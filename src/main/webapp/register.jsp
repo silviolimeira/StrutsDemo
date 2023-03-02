@@ -9,8 +9,8 @@
 <s:head />
 <body>
 	<h2>Registration Form</h2>
-	<s:form action="registerAction">
-		<s:textfield key="global.firstName" name="firstName"/>
+	<s:form action="registerAction" class="RegisterAction">
+		<s:textfield key="global.firstName" name="firstName" />
 		<s:textfield name="lastName" label="Last Name" />
 		<s:radio name="gender" list="{'Male', 'Female'}" label="Gender" />
 		<s:textfield name="age" label="Age" />
@@ -40,6 +40,16 @@
 			</tr>
 		</s:iterator>
 	</table>
+	<div align="center">
+		<s:url action="changeLocaleAction" var="urlEn">
+			<s:param name="request_locale">en</s:param>
+		</s:url>
+		<a href="${urlEn}">English</a>
+		<s:url action="changeLocaleAction" var="url_pt_BR">
+			<s:param name="request_locale">br</s:param>
+		</s:url>
+		<a href="${url_pt_BR}">Português Brasil</a>
+	</div>
 
 </body>
 </html>

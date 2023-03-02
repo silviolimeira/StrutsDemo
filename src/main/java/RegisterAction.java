@@ -1,5 +1,3 @@
-package action;
-
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,6 +6,11 @@ import java.util.List;
 import com.opensymphony.xwork2.ActionSupport;
 
 import pojo.Product;
+
+/*
+ * A classe deve ficar na pasta /src/main/java, juntamente com o -validation.xml para a validação
+ * funcionar 
+ */
 
 public class RegisterAction extends ActionSupport {
 
@@ -29,6 +32,7 @@ public class RegisterAction extends ActionSupport {
 	boolean valid = false;
 
 	public String execute() {
+		System.out.println("RegisterAction execute() method called");
 		initializeFormFields();
 
 		System.out.println("execute() method called");
@@ -50,10 +54,13 @@ public class RegisterAction extends ActionSupport {
 
 	@Override
 	public void validate() {
+		System.out.println("RegisterAction validate() method called");
+		initializeFormFields();
 		if (age != null && age > 0) valid = true;
 	}
 
 	public void initializeFormFields() {
+		System.out.println("RegisterAction initializeFormFields() method called");
 		initializeColors();
 		initializeHobbies();
 		initializeProducts();

@@ -33,7 +33,7 @@
 			<result name="input">/welcome.jsp</result>
 		</action>
 
-		<action name="registerAction" class="action.RegisterAction">
+		<action name="registerAction" class="RegisterAction">
 			<interceptor-ref name="myStack"></interceptor-ref>
 			<result name="success">/registerInfo.jsp</result>
 			<result name="error">/error.jsp</result>

@@ -5,16 +5,16 @@ import java.math.BigDecimal;
 public class Product {
 
 	String id;
-	String mame;
+	String name;
 	String category;
 	BigDecimal price;
 
 	public Product() {
 	}
 
-	public Product(String id, String mame, String category, BigDecimal price) {
+	public Product(String id, String name, String category, BigDecimal price) {
 		this.id = id;
-		this.mame = mame;
+		this.name = name;
 		this.category = category;
 		this.price = price;
 	}
@@ -27,12 +27,12 @@ public class Product {
 		this.id = id;
 	}
 
-	public String getMame() {
-		return mame;
+	public String getName() {
+		return name;
 	}
 
-	public void setMame(String mame) {
-		this.mame = mame;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getCategory() {
