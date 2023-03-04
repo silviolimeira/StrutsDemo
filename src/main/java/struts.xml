@@ -11,12 +11,14 @@
 		<interceptors>
 			<interceptor name="testInterceptor" class="interceptors.TestInterceptor" />
 			<interceptor name="ageGroupInterceptor" class="interceptors.AgeGroupInterceptor" />
-			<interceptor-stack name="myStack">
+			<interceptor name="loginInterceptor" class="interceptors.LoginInterceptor" />
+			<interceptor-stack name="loginStack">
+				<interceptor-ref name="loginInterceptor"/>
 				<interceptor-ref name="defaultStack"/>
-				<interceptor-ref name="testInterceptor"/>
 				<interceptor-ref name="ageGroupInterceptor"/>
 			</interceptor-stack>
 		</interceptors>
+		<default-interceptor-ref name="loginStack" />
 
 		<action name="changeLocaleAction" class="action.ChangeLocaleAction">
 			<result name="input">/login.jsp</result>
@@ -35,12 +37,11 @@
 
 		<action name="welcomeAction" class="action.WelcomeAction">
 			<result name="success">/welcome.jsp</result>
-			<result name="error">/error.jsp</result>
 			<result name="input">/welcome.jsp</result>
 		</action>
 
 		<action name="registerAction" class="RegisterAction">
-			<interceptor-ref name="myStack"></interceptor-ref>
+			<interceptor-ref name="loginStack"></interceptor-ref>
 			<result name="success">/registerInfo.jsp</result>
 			<result name="error">/error.jsp</result>
 			<result name="input">/register.jsp</result>

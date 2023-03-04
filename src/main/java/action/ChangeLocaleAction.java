@@ -8,6 +8,7 @@ public class ChangeLocaleAction extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
+		System.out.println("ChangeLocaleAction execute()");
 		return INPUT;
 	}
 	

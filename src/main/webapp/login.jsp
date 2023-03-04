@@ -12,18 +12,20 @@
 	<div align="center">
 		<h2>Login</h2>
 		<s:form action="loginAction" class="loginForm">
-			<s:textfield key="global.userName" name="userName" class="formTextField" />
-			<s:password key="global.userPassword" name="password" class="formTextField" />
+			<s:textfield key="global.userName" name="userName"
+				class="formTextField" />
+			<s:password key="global.userPassword" name="password"
+				class="formTextField" />
 			<s:submit value="Login" class="actionBtn" />
 		</s:form>
-		<s:url action="changeLocaleAction" var="urlEn">
-			<s:param name="request_locale">en</s:param>
-		</s:url>
-		<a href="${urlEn}">English</a>
-		<s:url action="changeLocaleAction" var="url_pt_BR">
-			<s:param name="request_locale">br</s:param>
-		</s:url>
-		<a href="${url_pt_BR}">Português Brasil</a>
+			<s:url action="changeLocaleAction" var="urlEn">
+				<s:param name="request_locale">en_US</s:param>
+			</s:url>
+			<a href="${urlEn}">English</a>
+			<s:url action="changeLocaleAction" var="url_pt_BR">
+				<s:param name="request_locale">pt_BR</s:param>
+			</s:url>
+			<a href="${url_pt_BR}">Português 1Brasil</a>
 	</div>
 
 </body>

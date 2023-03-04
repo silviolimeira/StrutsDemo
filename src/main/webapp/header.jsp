@@ -8,17 +8,15 @@
 </head>
 <body>
 
-<%-- <%
-if(session.getAttribute("loggedinUser") == null) {
-	response.sendRedirect("login.jsp");
-}
-%>
- --%>
- <div class="topnav">
-  <a href="welcomeAction">Home</a>
-  <a href="addProduct.jsp">Add Product</a>
-  <a href="logoutAction" style="float:right">Logout</a>
-</div> 
+	<%
+	if (session.getAttribute("loggedinUser") == null) {
+		response.sendRedirect("login.jsp");
+	}
+	%>
+	<div class="topnav">
+		<a href="welcomeAction">Home</a> <a href="addProduct.jsp">Add
+			Product</a> <a href="logoutAction" style="float: right">Logout</a>
+	</div>
 
 </body>
 </html>

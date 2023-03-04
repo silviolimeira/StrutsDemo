@@ -1,6 +1,7 @@
 package action;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -11,15 +12,16 @@ public class AddAction extends ActionSupport {
 
 	private static final long serialVersionUID = 1L;
 
-	String id;
+	Long id;
 	String name;
 	String category;
 	BigDecimal price;
+	
 
 	public String execute() {
 		String statusCode = "";
 		System.out.println("execute() method called");
-		Product product = new Product(id, name, category, price);
+		Product product = new Product(id, name, category, price, LocalDate.now());
 		int recordAdded = ProductManagementDAO.addProduct(product);
 		if (recordAdded == 1) {
 			statusCode = "success";
@@ -29,11 +31,11 @@ public class AddAction extends ActionSupport {
 		return statusCode;
 	}
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -60,5 +62,6 @@ public class AddAction extends ActionSupport {
 	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
+
 
 }

@@ -1,4 +1,5 @@
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -68,8 +69,8 @@ public class RegisterAction extends ActionSupport {
 
 	public void initializeProducts() {
 		products = new ArrayList<>();
-		products.add(new Product("111", "iPhone", "Mobile Phone", new BigDecimal("7000.00")));
-		products.add(new Product("222", "Sony", "Camera", new BigDecimal("700.00")));
+		products.add(new Product(null, "iPhone", "Mobile Phone", new BigDecimal("7000.00"), LocalDate.of(2023, 1, 1)));
+		products.add(new Product(null, "Sony", "Camera", new BigDecimal("700.00"), LocalDate.of(2023, 2, 1)));
 	}
 
 	public void initializeHobbies() {

@@ -1,7 +1,5 @@
 package interceptors;
 
-import java.util.Optional;
-
 import com.opensymphony.xwork2.ActionInvocation;
 import com.opensymphony.xwork2.interceptor.Interceptor;
 import com.opensymphony.xwork2.util.ValueStack;

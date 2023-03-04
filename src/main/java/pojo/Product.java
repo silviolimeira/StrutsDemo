@@ -1,29 +1,38 @@
 package pojo;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Product {
 
-	String id;
+	Long id;
 	String name;
 	String category;
 	BigDecimal price;
+	LocalDate created;
+	String strCreated;
 
 	public Product() {
 	}
 
-	public Product(String id, String name, String category, BigDecimal price) {
+	public Product(Long id, String name, String category, BigDecimal price, LocalDate created) {
 		this.id = id;
 		this.name = name;
 		this.category = category;
 		this.price = price;
+		this.created = created;
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		created.format(formatter);
+		this.strCreated = created.format(formatter);
 	}
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -49,6 +58,22 @@ public class Product {
 
 	public void setPrice(BigDecimal price) {
 		this.price = price;
+	}
+
+	public LocalDate getCreated() {
+		return created;
+	}
+
+	public void setCreated(LocalDate created) {
+		this.created = created;
+	}
+
+	public String getStrCreated() {
+		return strCreated;
+	}
+
+	public void setStrCreated(String strCreated) {
+		this.strCreated = strCreated;
 	}
 
 }

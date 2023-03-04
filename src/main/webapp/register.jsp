@@ -8,7 +8,7 @@
 <title>Registration Form</title>
 <s:head />
 <body>
-	<%@ include file="header.jsp" %>
+	<%@ include file="header.jsp"%>
 
 	<h2>Registration Form</h2>
 	<s:form action="registerAction" class="RegisterAction">
@@ -44,11 +44,11 @@
 	</table>
 	<div align="center">
 		<s:url action="changeLocaleAction" var="urlEn">
-			<s:param name="request_locale">en</s:param>
+			<s:param name="request_locale">en_US</s:param>
 		</s:url>
 		<a href="${urlEn}">English</a>
 		<s:url action="changeLocaleAction" var="url_pt_BR">
-			<s:param name="request_locale">br</s:param>
+			<s:param name="request_locale">pt_BR</s:param>
 		</s:url>
 		<a href="${url_pt_BR}">Português Brasil</a>
 	</div>

@@ -14,7 +14,7 @@
 	<div align="center">
 		<h2>Add New Product</h2>
 		<s:form action="addAction" class="formTable">
-			<s:textfield name="id" label="Product Id" class="formTextField"/>
+			<!-- <s:textfield name="id" label="Product Id" class="formTextField"/> -->
 			<s:textfield name="name" label="Product Name" class="formTextField"/>
 			<s:textfield name="category" label="Product Category" class="formTextField"/>
 			<s:textfield name="price" label="Product Price" class="formTextField"/>

@@ -36,6 +36,7 @@
 			<column name="name" type="VARCHAR(255)" />
 			<column name="category" type="VARCHAR(255)" />
 			<column name="price" type="DECIMAL(14,2)" />
+			<column name="created" type="DATE" />
 		</createTable>
 
 	</changeSet>

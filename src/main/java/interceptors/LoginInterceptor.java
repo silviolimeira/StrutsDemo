@@ -9,6 +9,8 @@ import action.LoginAction;
 
 public class LoginInterceptor implements Interceptor {
 
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	public void destroy() {
 		System.out.println("LoginInterceptor destroy() called");
